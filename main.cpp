@@ -38,7 +38,6 @@ public:
     }
 }; 
 
-
 int main()
 {
 	// declare an integer and a float variable

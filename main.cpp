@@ -3,7 +3,40 @@
 // Purpose:   A simple program demonstrating the use of pointers.
 
 #include <iostream>
+#include <sstream>
+#include <vector>
+#include <string>
 using namespace std;
+
+class Solution {
+public:
+    Solution() = default;
+
+    std::vector<std::string> fizzBuzz(int n) {
+        ostringstream oss;
+        vector<string> vec (n);
+
+        bool flag = false;
+        for (int i = 1; i <= n; i++) {
+            if (i % 3 == 0) {
+                oss << "Fizz";
+                flag = true;
+            }
+            if (i % 5 == 0) {
+                oss << "Buzz";
+                flag = true;
+            }
+
+            if (!flag) {oss << i; }
+            flag = false;
+            
+            vec.at(i-1) = oss.str();
+            oss.clear();
+            oss.str("");
+        }
+        return vec;
+    }
+};
 
 int main()
 {
@@ -44,6 +77,20 @@ int main()
 
 	cout << "\t pIntNum contains: " << *pIntNum << endl;
 	cout << "\t pFloatNum contains: " << *pFloatNum << endl;
+
+    Solution s = Solution();
+    auto v = s.fizzBuzz(3);
+
+    for (auto el: v) {
+        std::cout << el << std::endl;
+    }
+
+    std::cout << std::endl << std::endl << "Let's try this again." << std::endl << std::endl;
+    v = s.fizzBuzz(50);
+
+    for (auto el: v) {
+        std::cout << el << std::endl;
+    }
 
 	return 0;
 }

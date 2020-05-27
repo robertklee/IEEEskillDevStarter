@@ -36,7 +36,8 @@ public:
         }
         return vec;
     }
-};
+}; 
+
 
 int main()
 {

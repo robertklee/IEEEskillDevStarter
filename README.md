@@ -1,2 +1,2 @@
-# skillDevSummer2020Starter
+# skillDev Starter Repository
 A starter repository to learn git fundamentals!
